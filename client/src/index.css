@@ -165,38 +165,3 @@
   font-size: 14px;
   color: #fff;
   font-family: inherit;
-# Server
-PORT=3000
-NODE_ENV=production
-
-# Discord OAuth2
-DISCORD_CLIENT_ID=1504033422551810068
-DISCORD_CLIENT_SECRET=vPDm624JoaiVRUoJJwFCO1x_IBjE077Q
-DISCORD_REDIRECT_URI=https://127.0.0.1
-# Bot token is required for Discord DM notifications with Components V2.
-DISCORD_BOT_TOKEN=MTUwNDAzMzQyMjU1MTgxMDA2OA.GR80iE.JX3KaiCqOlW-WgMseOBS7PhUNYbhPK_X9nyK8I
-
-# Activity URL (used in Discord Developer Portal)
-DISCORD_ACTIVITY_URL=https://dsasastiktoikadakdd.duckdns.org
-
-# DuckDNS
-DUCKDNS_DOMAIN=dsasastiktoikadakdd
-DUCKDNS_TOKEN=7aaea5a5-75e9-4287-8dd3-a1819064d852
-
-# JWT — replace with a long random secret (min 64 chars)
-JWT_SECRET=5a21c2e7c55962ae2e3e6efc50abe50557554121c0c3691596bcd940861552499a29ef2d0c27c4c4f61036d1f3ba537650bd0f359b5e6c4ecec7d7f828488558
-
-# Admin Discord IDs (comma-separated, no spaces)
-ADMIN_DISCORD_IDS=1355547523867213995
-
-# Storage
-UPLOADS_DIR=/var/www/tiktok/uploads
-DATABASE_PATH=/var/www/tiktok/database/tiktok.db
-
-# Limits
-MAX_FILE_SIZE_MB=80
-MAX_VIDEO_FILE_SIZE_MB=80
-MAX_VIDEO_DURATION_SEC=180
-MAX_PHOTOS_PER_POST=12
-MAX_PHOTO_FILE_SIZE_MB=8
-MAX_PHOTO_TOTAL_SIZE_MB=40
