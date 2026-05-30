@@ -1,0 +1,202 @@
+  scrollbar-width: none;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.feed-container::-webkit-scrollbar {
+  display: none;
+}
+
+.feed-tabs {
+  position: absolute;
+  top: calc(18px + var(--safe-top));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  gap: 24px;
+  background: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(12px);
+  padding: 10px 24px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: auto;
+  transition: top 0.3s ease;
+}
+
+@media (max-width: 899px) {
+  .feed-tabs {
+    top: calc(52px + var(--safe-top)); /* Clear iOS Discord Activity header */
+  }
+}
+
+.feed-tab {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 4px 0;
+  position: relative;
+}
+
+.feed-tab--active {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background: #030408;
+  overscroll-behavior: contain;
+}
+
+/* Visibility Gradients for Mobile UI */
+.video-section::before, 
+.video-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.video-section::before {
+  top: 0;
+
+.video-player,
+.photo-player {
+  display: block;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: 100% !important;
+  /* Force take space */
+  height: 100% !important;
+  /* Force take space */
+  object-fit: contain !important;
+  object-position: center;
+  margin: 0 !important;
+  flex-shrink: 0;
+  transform-origin: center center;
+  transition: transform 120ms ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  will-change: transform;
+}
+
+/* Videos should usually try to take more space but still contain */
+.video-player {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.photo-carousel {
+  position: relative;
+  pointer-events: none;
+  transform: translateY(-6px);
+}
+
+.media-ui-hidden .photo-arrow {
+  opacity: 0.2;
+}
+
+.feed-details {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  gap: 8px;
+  padding: 18px 76px calc(38px + var(--safe-bottom)) 16px; /* Lifted more for seek bar */
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.84), rgba(0, 0, 0, 0)),
+    linear-gradient(90deg, rgba(141, 247, 255, 0.06), transparent 42%);
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.feed-details button {
+  pointer-events: auto;
+}
+    max-height: none;
+  }
+}
+
+.video-controls-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px; /* Thinner */
+  z-index: 60; /* Above action-sidebar and details */
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.seek-bar-container {
+  width: 100%;
+  height: 48px; /* Massive hit target */
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  padding: 0 4px;
+  margin-bottom: var(--safe-bottom);
+  width: 14px;
+  height: 14px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.video-time {
+  position: absolute;
+  top: -28px; /* Positioned exactly above the seek-bar-container */
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  font-size: 14px;
+  color: #fff;
+  font-family: inherit;
+# Server
+PORT=3000
+NODE_ENV=production
+
+# Discord OAuth2
+DISCORD_CLIENT_ID=1504033422551810068
+DISCORD_CLIENT_SECRET=vPDm624JoaiVRUoJJwFCO1x_IBjE077Q
+DISCORD_REDIRECT_URI=https://127.0.0.1
+# Bot token is required for Discord DM notifications with Components V2.
+DISCORD_BOT_TOKEN=MTUwNDAzMzQyMjU1MTgxMDA2OA.GR80iE.JX3KaiCqOlW-WgMseOBS7PhUNYbhPK_X9nyK8I
+
+# Activity URL (used in Discord Developer Portal)
+DISCORD_ACTIVITY_URL=https://dsasastiktoikadakdd.duckdns.org
+
+# DuckDNS
+DUCKDNS_DOMAIN=dsasastiktoikadakdd
+DUCKDNS_TOKEN=7aaea5a5-75e9-4287-8dd3-a1819064d852
+
+# JWT — replace with a long random secret (min 64 chars)
+JWT_SECRET=5a21c2e7c55962ae2e3e6efc50abe50557554121c0c3691596bcd940861552499a29ef2d0c27c4c4f61036d1f3ba537650bd0f359b5e6c4ecec7d7f828488558
+
+# Admin Discord IDs (comma-separated, no spaces)
+ADMIN_DISCORD_IDS=1355547523867213995
+
+# Storage
+UPLOADS_DIR=/var/www/tiktok/uploads
+DATABASE_PATH=/var/www/tiktok/database/tiktok.db
+
+# Limits
+MAX_FILE_SIZE_MB=80
+MAX_VIDEO_FILE_SIZE_MB=80
+MAX_VIDEO_DURATION_SEC=180
+MAX_PHOTOS_PER_POST=12
+MAX_PHOTO_FILE_SIZE_MB=8
+MAX_PHOTO_TOTAL_SIZE_MB=40
